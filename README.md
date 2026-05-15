@@ -10,6 +10,7 @@ The image is built from the root `Dockerfile` and published by the repository Gi
 ## Image Contents
 
 - Base image: `python:3.14-slim`
+- Installed with `apt`: `git`
 - Installed with `pip`: `ipykernel`
 - Runtime user in Codespaces/devcontainer: `root` (configured in `.devcontainer/devcontainer.json`)
 
