@@ -11,7 +11,7 @@ The image is built from the root `Dockerfile` and published by the repository Gi
 
 - Base image: `python:3.14-slim`
 - Installed with `pip`: `ipykernel`
-- Runtime user: non-root `vscode` user (UID `1000`), created during image build
+- Runtime user in Codespaces/devcontainer: `root` (configured in `.devcontainer/devcontainer.json`)
 
 ## Notes
 
