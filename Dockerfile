@@ -1,15 +1,8 @@
-# Base image: customize as needed for your use case
-FROM debian:bookworm-slim
+# Use Python 3.14 slim as the base image
+FROM python:3.14-slim
 
-# Avoid interactive prompts
-ENV DEBIAN_FRONTEND=noninteractive
-
-# Install minimal system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates \
-    curl \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+# Install only the requested Python package
+RUN pip install --no-cache-dir ipykernel
 
 # Create a non-root user (Codespaces uses "vscode" by default)
 ARG USER=vscode
@@ -19,5 +12,5 @@ RUN useradd -m -u ${UID} ${USER} || true
 # Switch to that user
 USER ${USER}
 
-# Add your package installations or configuration here
-RUN echo "Image setup complete"
+# Default working directory
+WORKDIR /home/${USER}
