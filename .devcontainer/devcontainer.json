@@ -1,0 +1,12 @@
+{
+  "name": "Docker Image Development",
+  "dockerfile": "../Dockerfile",
+  "remoteUser": "vscode",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [],
+      "settings": {}
+    }
+  }
+}
